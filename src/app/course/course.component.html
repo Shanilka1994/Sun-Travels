@@ -1,0 +1,52 @@
+<header>
+    <h1>All Data</h1>
+  </header>
+  <body>
+  <table class="table table-striped table-responsive-md btn-table">
+    <tr>
+        <th>Post Id</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Body</th>
+  
+    </tr>
+  
+    <tr *ngFor ="let com of lstcomments">
+      <td>{{com.postId}}</td>
+      <td>{{com.id}}</td>
+      <td>{{com.name}}</td>
+      <td>{{com.email}}</td>
+      <td>{{com.body}}</td>
+    </tr>
+  
+  </table>
+
+<h1>User id=1</h1>
+  <table class="table table-striped table-responsive-md btn-table">
+    <tr>
+        <th>User Id</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+  
+    </tr>
+  
+    <tr *ngFor ="let com of lstposts">
+      <td>{{com.userId}}</td>
+      <td>{{com.id}}</td>
+      <td>{{com.title}}</td>
+      <td>{{com.body}}</td>
+    </tr>
+  
+  </table>
+
+<h1>Post data</h1>
+
+  <p>{{objposts.id}}</p>
+  <p>{{objposts.userId}}</p>
+  <p>{{objposts.title}}</p>
+  <p>{{objposts.body}}</p>
+
+
+  </body>

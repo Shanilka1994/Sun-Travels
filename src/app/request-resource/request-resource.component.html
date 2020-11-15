@@ -1,0 +1,110 @@
+<div class="container">
+<form (ngSubmit)="onSubmit(resourceRequest)" #resourceRequest="ngForm">
+
+   <div class="jumbotron">
+    <h4>Resource Requests</h4>
+   
+    <div class="form-row">
+      <div class="col-md-3 mb-1">
+        <div class="form-group">
+            <select ngModel name="project" id="project" class="form-control form-control-sm" placeholder="Project" required>
+                    <option value="" disabled selected>Project</option>
+                <option *ngFor="let project of project" [value]="project.id">
+                     {{project.name}}
+                </option> 
+            </select>           
+         </div>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-3 mb-1">
+        <div class="form-group">
+            <select ngModel name="position" id="position" class="form-control form-control-sm" required>
+                <option value="" disabled selected>Position</option>
+                <option *ngFor="let position of position" [value]="position.id">
+                     {{position.name}}
+                </option> 
+            </select>           
+         </div>
+      </div>
+
+      <div class="col-md-3 mb-1">
+            <div class="form-group">
+                <select ngModel name="no" id="no" class="form-control form-control-sm" placeholder="No" required>
+                        <option value="" disabled selected>No</option>
+                    <option *ngFor="let no of no" [value]="no">
+                         {{no}}
+                    </option> 
+                </select>           
+             </div>
+          </div>
+
+      <div class="col-md-3 mb-1">
+        <input type="date" class="form-control form-control-sm" id="from" name="from" ngModel  #from="ngModel" required>
+      </div>
+
+      <div class="col-md-3 mb-1">
+        <input type="date" class="form-control form-control-sm" id="to"  name="to" ngModel #to="ngModel" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+            <div class="col-md-3 mb-1">
+                    <div class="form-group">
+                        <select ngModel name="requestType" id="requestType" class="form-control form-control-sm" required>
+                            <option value="" disabled selected>Request Type</option>
+                            <option *ngFor="let position of position" [value]="position.id">
+                                 {{position.name}}
+                            </option> 
+                        </select>           
+                    </div>
+            </div>
+
+                  
+            <div class="col-md-3 mb-1">
+                    <div class="form-group">
+                        <select ngModel name="priority" id="priority" class="form-control form-control-sm" required>
+                            <option value="" disabled selected>Prority</option>
+                            <option *ngFor="let position of position" [value]="position.id">
+                                 {{position.name}}
+                            </option> 
+                        </select>           
+                     </div>
+                  </div>
+            
+        <div class="col-md-3 mb-1">
+          <input type="number" class="form-control form-control-sm" id="manHours" name="manHours" placeholder="Man Hours" ngModel #manHours="ngModel" required>
+        </div>
+        <div class="col-md-3 mb-1">
+          <input type="number" class="form-control form-control-sm" id="budget" name="budget" placeholder="Budget Allocation ($)" ngModel #budget="ngModel" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+            <textarea class="form-control form-control-sm" id="jobDescription" name="jobDescription" rows="4"  placeholder="Job Description" ngModel #jobDescription="ngModel"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mb-1">
+            <textarea class="form-control form-control-sm" id="additionalComments" name="additionalComments" rows="3"  placeholder="Additional Comments" ngModel  #additionalComments="ngModel"></textarea>
+        </div>
+      </div>
+    <div class="row justify-content-end">
+      <div class="form-check mr-3">
+        <input class="form-check-input" type="checkbox" value=false id="createAnother" name="createAnother" ngModel #createAnother="ngModel" >
+        <label class="form-check-label" for="invalidCheck2">
+          Create another
+        </label>
+      </div>
+      <div class="btn-group mr-3">
+      <button class="btn btn-primary" type="submit" [disabled]="!resourceRequest.form.valid">Create</button>
+      </div>
+      <div class="btn-group mr-3">
+      <button class="btn btn-light" type="reset">Cancel</button>
+    </div>
+    </div>
+   
+   </div>
+  </form>
+</div>

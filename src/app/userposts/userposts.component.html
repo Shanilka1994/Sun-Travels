@@ -1,0 +1,58 @@
+<!-- <h1>User Posts</h1>
+
+    <input type="text" #title (keyup.enter)="addTitle(title)" class="form-control">
+<ul>
+    <li *ngFor="let p of posts">
+        <a [routerLink]="['/posts',p.id]">{{p.id}}</a>
+        <button class="btn btn-default btn-small" (click)="updatePost(p)">
+            Update
+        </button>
+
+        <button class="btn btn-default btn-small" (click)="deletePost(p)">
+            Delete
+        </button>
+
+        {{p.title}}
+    </li>
+</ul> -->
+
+<!-- <ul>
+    <li *ngFor="let p of post">
+     {{p.id}}
+     {{p.title}}
+    </li>
+</ul> -->
+<html>
+<table>
+    <tr *ngFor="let data of data" >
+    <td>{{data.empNo}}</td>
+    <td>{{data.name}}</td>
+    <td>
+        <form>
+                <input list="filteredAllocatedEmpProjects"  >
+                <datalist id="filteredAllocatedEmpProjects">
+                  <option *ngFor="let projectCode of projectCodes" [value]=projectCode>
+                </datalist>
+        </form>
+    
+    </td>
+    </tr>
+
+  
+
+</table>
+
+<form action="/action_page.php" method="get">
+    <label for="browser">Choose your browser from the list:</label>
+    <input list="browsers" name="browser" id="browser">
+    <datalist id="browsers">
+      <option value="Edge">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    </datalist>
+    <input type="submit">
+  </form>
+
+  </html>
